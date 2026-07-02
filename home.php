@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<h1>Actualités</h1>
+
 <?php if (have_posts()) : ?>
     <div class="row">
         <?php while (have_posts()) : the_post(); ?>
