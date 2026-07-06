@@ -3,6 +3,9 @@
 function montheme_supports() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_theme_support('menus');
+    register_nav_menu('header', 'En-tête du menu');
+    register_nav_menu('footer', 'Pied de page');
 }
 
 function montheme_register_assets() {
@@ -18,6 +21,18 @@ function montheme_title_separator() {
     return '|';
 }
 
+function montheme_menu_class(array $classes) {
+    $classes[] = 'nav-item';
+    return $classes;
+}
+
+function montheme_menu_link_class(array $attrs) {
+    $attrs['class'] = 'nav-link';
+    return $attrs;
+}
+
 add_action('after_setup_theme', 'montheme_supports');
 add_action('wp_enqueue_scripts', 'montheme_register_assets');
 add_filter('document_title_separator', 'montheme_title_separator');
+add_filter('nav_menu_css_class', 'montheme_menu_class');
+add_filter('nav_menu_link_attributes', 'montheme_menu_link_class');
