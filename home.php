@@ -18,6 +18,7 @@
             </div>
         <?php endwhile; ?>
     </div>
+    <?php montheme_pagination(); ?>
 <?php else : ?>
     <p>Aucun article</p>
 <?php endif; ?>
