@@ -7,7 +7,7 @@
         <?php while (have_posts()) : the_post(); ?>
             <div class="col-sm-4">
                 <div class="card">
-                    <?php the_post_thumbnail('medium', ['class' => 'card-img-top', 'alt' => get_the_title(), 'style' => 'object-fit: cover;']); ?>
+                    <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' => get_the_title(), 'style' => 'object-fit: cover;']); ?>
                     <div class="card-body">
                         <h5 class="card-title"><?php the_title(); ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><?php the_category(); ?></h6>
